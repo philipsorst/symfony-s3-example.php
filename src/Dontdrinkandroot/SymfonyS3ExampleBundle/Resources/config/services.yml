@@ -1,0 +1,14 @@
+services:
+
+    ddr_symfony_s3_example.credentials:
+        class: Aws\Common\Credentials\Credentials
+        arguments:
+            - %aws_access_key%
+            - %aws_access_secret%
+
+    ddr_symfony_s3_example.s3client:
+        class: Aws\S3\S3Client
+        factory: [Aws\S3\S3Client, factory]
+        arguments:
+            -
+                credentials: @ddr_symfony_s3_example.credentials

@@ -1,0 +1,4 @@
+ddr_symfony_s3_example:
+    resource: "@DdrSymfonyS3ExampleBundle/Resources/config/routing.yml"
+    prefix:   /
+

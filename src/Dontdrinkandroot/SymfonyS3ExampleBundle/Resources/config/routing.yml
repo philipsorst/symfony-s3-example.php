@@ -1,0 +1,3 @@
+ddr_symfony_s3_example_homepage:
+    path:     /
+    defaults: { _controller: DdrSymfonyS3ExampleBundle:Default:index }
