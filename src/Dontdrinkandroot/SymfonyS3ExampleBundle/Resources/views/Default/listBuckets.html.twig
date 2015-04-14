@@ -1,0 +1,31 @@
+{% extends 'DdrSymfonyS3ExampleBundle::base.html.twig' %}
+{% block title %}Buckets{% endblock title %}
+{% block main %}
+    <div class="page-header">
+        <div class="btn-group pull-right" role="group">
+            <a href="{{ path('ddr_symfony_s3_example_create_bucket') }}"
+               class="btn btn-default"><i class="fa fa-plus"></i></a>
+        </div>
+        <h1>Buckets</h1>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for bucket in buckets %}
+            <tr>
+                <td>
+                    <a href="{{ path('ddr_symfony_s3_example_list_bucket', {'bucketName': bucket.Name}) }}">{{ bucket.Name }}</a>
+                </td>
+                <td>
+                    <a href="{{ path('ddr_symfony_s3_example_delete_bucket', {'bucketName': bucket.Name}) }}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock main %}

@@ -1,3 +1,27 @@
-ddr_symfony_s3_example_homepage:
-    path:     /
-    defaults: { _controller: DdrSymfonyS3ExampleBundle:Default:index }
+ddr_symfony_s3_example_list_buckets:
+    path: /
+    defaults: { _controller: DdrSymfonyS3ExampleBundle:Default:listBuckets }
+
+ddr_symfony_s3_example_create_bucket:
+    path: /createbucket
+    defaults: { _controller: DdrSymfonyS3ExampleBundle:Default:createBucket}
+
+ddr_symfony_s3_example_list_bucket:
+    path: /{bucketName}/browse
+    defaults: { _controller: DdrSymfonyS3ExampleBundle:Default:listBucket}
+
+ddr_symfony_s3_example_show_file:
+    path: /{bucketName}/browse/{key}
+    defaults: { _controller: DdrSymfonyS3ExampleBundle:Default:showFile}
+
+ddr_symfony_s3_example_upload_file:
+    path: /{bucketName}/upload
+    defaults: { _controller: DdrSymfonyS3ExampleBundle:Default:uploadFile}
+
+ddr_symfony_s3_example_delete_bucket:
+    path: /{bucketName}/delete
+    defaults: { _controller: DdrSymfonyS3ExampleBundle:Default:deleteBucket}
+
+ddr_symfony_s3_example_delete_file:
+    path: /{bucketName}/delete/{key}
+    defaults: { _controller: DdrSymfonyS3ExampleBundle:Default:deleteFile}

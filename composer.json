@@ -16,6 +16,7 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
+        "braincrafted/bootstrap-bundle": "~2.0",
         "aws/aws-sdk-php": "~2.8"
     },
     "require-dev": {

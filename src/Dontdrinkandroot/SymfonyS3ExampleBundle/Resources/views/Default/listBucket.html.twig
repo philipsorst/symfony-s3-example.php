@@ -1,0 +1,37 @@
+{% extends 'DdrSymfonyS3ExampleBundle::base.html.twig' %}
+{% block title %}{{ bucketName }}{% endblock title %}
+{% block main %}
+    <div class="page-header">
+        <div class="btn-group pull-right" role="group">
+            <a href="{{ path('ddr_symfony_s3_example_upload_file', {'bucketName': bucketName}) }}"
+               class="btn btn-default"><i class="fa fa-upload"></i></a>
+            <a href="{{ path('ddr_symfony_s3_example_delete_bucket', {'bucketName': bucketName}) }}"
+               class="btn btn-default"><i class="fa fa-trash-o"></i></a>
+        </div>
+        <h1>{{ bucketName }}</h1>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Key</th>
+            <th>Last Modified</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for resource in resources %}
+            <tr>
+                <td>
+                    <a href="{{ path('ddr_symfony_s3_example_show_file', {'bucketName': bucketName, 'key': resource.Key}) }}">
+                        {{ resource.Key }}
+                    </a>
+                </td>
+                <td>{{ resource.LastModified|date("l, d-M-y H:i:s T") }}</td>
+                <td>
+                    <a href="{{ path('ddr_symfony_s3_example_delete_file', {'bucketName': bucketName, 'key': resource.Key}) }}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock main %}

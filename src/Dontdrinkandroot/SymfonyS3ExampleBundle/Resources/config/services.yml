@@ -12,3 +12,11 @@ services:
         arguments:
             -
                 credentials: @ddr_symfony_s3_example.credentials
+                signature: v4
+                region: %aws_region%
+
+    ddr_symfony_s3_example.s3service:
+        class: Dontdrinkandroot\SymfonyS3ExampleBundle\Service\S3Service
+        arguments:
+            - @ddr_symfony_s3_example.s3client
+            - %aws_region%

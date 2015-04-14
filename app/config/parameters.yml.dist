@@ -2,3 +2,4 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
     aws_access_key: ~
     aws_access_secret: ~
+    aws_region: eu-central-1
